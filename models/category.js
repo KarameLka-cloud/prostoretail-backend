@@ -1,30 +1,25 @@
 const {DataTypes, Model} = require('sequelize');
 
-class User extends Model {
+class Category extends Model {
     static initModel(sequelize) {
-        User.init(
+        Category.init(
             {
                 id: {
                     type: DataTypes.INTEGER,
                     primaryKey: true,
                     autoIncrement: true,
                 },
-                username: {
+                name: {
                     type: DataTypes.STRING,
                     allowNull: false,
-                },
-                email: {
-                    type: DataTypes.STRING,
-                    allowNull: false,
-                    unique: true,
                 },
             },
             {
                 sequelize,
-                modelName: 'user',
+                modelName: 'category',
             }
         );
     }
 }
 
-module.exports = User;
+module.exports = Category;

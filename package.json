@@ -1,10 +1,31 @@
 {
+  "name": "prostoretail-backend",
+  "version": "1.0.0",
+  "description": "Бэкенд часть сайта Prostoretail",
+  "homepage": "https://github.com/KarameLka-cloud/prostoretail-backend#readme",
+  "bugs": {
+    "url": "https://github.com/KarameLka-cloud/prostoretail-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarameLka-cloud/prostoretail-backend.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10",
     "sequelize": "^6.37.7"
-  }
+  },
+  "devDependencies": {}
 }

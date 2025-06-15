@@ -1,16 +1,22 @@
+require('dotenv').config();
 const express = require('express');
+const {sequelize} = require('./models');
+
+// const userRoutes = require('./routes/users');
+// const categoryRoutes = require('./routes/categories');
+
 const app = express();
 
-app.get('/', (req, res) => {
-    const {value} = req.query;
-    res.json({name: value});
-})
+// app.use(express.json());
+// app.use('/users', userRoutes);
+// app.use('/categories', categoryRoutes);
 
-app.get('/event', (req, res) => {
-    const {value} = req.query;
-    res.json({event: value});
-});
-
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
+sequelize.sync({force: true})
+    .then(() => {
+        app.listen(process.env.PORT, process.env.URL, () => {
+            console.log(`Сервер запущен: ${process.env.URL}:${process.env.PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error('Unable to sync database:', err);
+    });
