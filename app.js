@@ -1,17 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const {sequelize} = require('./models');
-
-// const userRoutes = require('./routes/users');
-// const categoryRoutes = require('./routes/categories');
+const routes = require('./routes');
 
 const app = express();
 
-// app.use(express.json());
-// app.use('/users', userRoutes);
-// app.use('/categories', categoryRoutes);
+routes(app);
 
-sequelize.sync({force: true})
+sequelize.sync()
     .then(() => {
         app.listen(process.env.PORT, process.env.URL, () => {
             console.log(`Сервер запущен: ${process.env.URL}:${process.env.PORT}`);
