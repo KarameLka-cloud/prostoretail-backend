@@ -15,6 +15,7 @@ prostoretail-backend/
 ├── /middleware    # Доступы
 ├── /models        # Модели
 ├── /routes        # Роуты
+├── /services      # Фичи
 ├── .env           # Настройки БД и сервера
 └── app.js         # Точка входа
 ```
